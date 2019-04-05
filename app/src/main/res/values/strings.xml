@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Trending Repos of Github</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_text">Please press the button to get weekly trending repos</string>
+    <string name="weekly">Weekly</string>
+    <string name="daily">Daily</string>
+    <string name="reset">Reset</string>
+    <string name="second_activity_label">Loading Detailed Info</string>
+</resources>
