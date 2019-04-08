@@ -40,9 +40,7 @@ public class MainActivity extends AppCompatActivity {
         if(!isNetworkAvailable()){
             Toast.makeText(this, "Please connect to network...", Toast.LENGTH_SHORT).show();
         } else {
-            //fetches the data from api, I have used the "weekly" string
-            //cause there were two options of trending repos daily and weekly.
-            //in the real-world app this would be String choice = (get the input from edittext, button, text, etc.)
+            //fetches the data from api
             generateTrendingRepos(reposList);
 
 
