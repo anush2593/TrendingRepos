@@ -8,7 +8,6 @@ import com.example.trendingreposofgithub.model.Repos;
 import java.util.List;
 
 public class ReposViewModel extends ViewModel {
-    private final MutableLiveData<Repos> selected = new MutableLiveData<>();
     private MutableLiveData<List<Repos>> data;
     private ReposRepository reposRepository;
 
