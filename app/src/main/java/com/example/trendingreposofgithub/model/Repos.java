@@ -28,8 +28,7 @@ public class Repos {
     int stars;
 
 
-
-     public String getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
@@ -50,15 +49,13 @@ public class Repos {
     }
 
 
-
-
     public Repos(String author, String name,
-                 String description, String language, int stars){
+                 String description, String language, int stars) {
         this.author = author;
         this.name = name;
-        this.description=description;
+        this.description = description;
         this.language = language;
-        this.stars=stars;
+        this.stars = stars;
     }
 
     @Override
@@ -66,6 +63,6 @@ public class Repos {
         String text = "Name:" + " " + name + " " + "\n" + "Description:" + " " + description
                 + "\n" + "Language Used: " + " " + language
                 + "\n" + "Stars: " + " " + stars;
-        return text ;
+        return text;
     }
 }

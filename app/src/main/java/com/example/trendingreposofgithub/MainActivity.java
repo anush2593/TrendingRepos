@@ -13,9 +13,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import com.example.trendingreposofgithub.model.Repos;
 import com.example.trendingreposofgithub.ui.CustomAdapter;
 import com.example.trendingreposofgithub.view_model.ReposViewModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.repo_list_activity);
         progressBar = findViewById(R.id.progressBar_cyclic);
 
-        if(!isNetworkAvailable()){
+        if (!isNetworkAvailable()) {
             Toast.makeText(this, "Please connect to network...", Toast.LENGTH_SHORT).show();
         } else {
             //fetches the data from api
@@ -46,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-        // In real world app I would use PAGINATION,
-        // but as here we don't have huge amount of data, I've decided not to 
-        // use it. 
+    // In real world app I would use PAGINATION,
+    // but as here we don't have huge amount of data, I've decided not to
+    // use it.
 
-    public void generateTrendingRepos( final List<Repos> repoList) {
+    public void generateTrendingRepos(final List<Repos> repoList) {
         mRecyclerView = findViewById(R.id.recycler_view);
         mDataAdapter = new CustomAdapter(repoList);
         viewModel = ViewModelProviders.of(MainActivity.this).get(ReposViewModel.class);
@@ -61,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel.init();
         viewModel.getRepos().observe(this, new Observer<List<Repos>>() {
-                @Override
-                public void onChanged(@Nullable List<Repos> repos) {
-                    mDataAdapter.setListOfRepos(repos);
-                    progressBar.setVisibility(View.GONE);
+            @Override
+            public void onChanged(@Nullable List<Repos> repos) {
+                mDataAdapter.setListOfRepos(repos);
+                progressBar.setVisibility(View.GONE);
 
-                }
-            });
+            }
+        });
 
 
     }

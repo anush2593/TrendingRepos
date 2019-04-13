@@ -15,6 +15,4 @@ public interface GetTrendingRepos {
     Call<List<Repos>> getRepos(@Query("language") String lang);
 
 
-
-
 }
