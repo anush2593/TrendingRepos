@@ -67,9 +67,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     }
 
+    public void setListOfRepos(List<Repos> listOfRepos){
+        this.listOfRepos = listOfRepos;
+        notifyDataSetChanged();
+    }
+
+
     @Override
      public int getItemCount() {
-        if(listOfRepos.size()>0){
+        if(listOfRepos!= null){
             return listOfRepos.size();
         } else {
             return 0;

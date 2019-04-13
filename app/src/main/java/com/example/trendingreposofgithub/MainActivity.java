@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-        // In real world app I would use pagination, 
+        // In real world app I would use PAGINATION,
         // but as here we don't have huge amount of data, I've decided not to 
         // use it. 
 
@@ -63,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
         viewModel.getRepos().observe(this, new Observer<List<Repos>>() {
                 @Override
                 public void onChanged(@Nullable List<Repos> repos) {
-                    repoList.addAll(repos);
-                    mDataAdapter.notifyDataSetChanged();
+                    mDataAdapter.setListOfRepos(repos);
+                   // repoList.addAll(repos);
+                   // mDataAdapter.notifyDataSetChanged();
                     progressBar.setVisibility(View.GONE);
 
                 }
