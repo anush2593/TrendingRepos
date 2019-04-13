@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(@Nullable List<Repos> repos) {
                     mDataAdapter.setListOfRepos(repos);
-                   // repoList.addAll(repos);
-                   // mDataAdapter.notifyDataSetChanged();
                     progressBar.setVisibility(View.GONE);
 
                 }

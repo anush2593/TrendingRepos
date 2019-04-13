@@ -24,6 +24,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         private TextView author, description, language;
         public MyViewHolder(View view) {
             super(view);
+            //here butterknife could be used
             author =  view.findViewById(R.id.author_name);
             description = view.findViewById(R.id.description);
             language = view.findViewById(R.id.lang_stars);

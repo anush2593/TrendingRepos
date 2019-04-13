@@ -34,13 +34,15 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        progressBar = getActivity().findViewById(R.id.progressBar_cyclic);
         viewModel = ViewModelProviders.of(DetailsFragment.this).get(ReposViewModel.class);
         if (getArguments().containsKey(ARG_ITEM_ID)) {
+
             viewModel.init();
             viewModel.getRepos().observe(this, new Observer<List<Repos>>() {
                 @Override
                 public void onChanged(@Nullable List<Repos> repos) {
+                    progressBar = getActivity().findViewById(R.id.progressBar_cyclic);
+
                     reposList.addAll(repos);
                     repo = reposList.get(getArguments().getInt(ARG_ITEM_ID));
                     Activity activity = getActivity();

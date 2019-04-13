@@ -18,7 +18,7 @@ public class ReposRepository {
 
     public MutableLiveData<List<Repos>> getRepos(){
         final MutableLiveData<List<Repos>> pojoMutableLiveData = new MutableLiveData<>();
-        GetTrendingRepos  getTrendingRepos = RetrofitClient.getInstance().create(GetTrendingRepos.class);
+        GetTrendingRepos  getTrendingRepos = RetrofitClient.getInstance().getTrendingRepos();
         Call<List<Repos>>call = getTrendingRepos.getRepos("kotlin");
          call.enqueue(new Callback<List<Repos>>() {
              @Override

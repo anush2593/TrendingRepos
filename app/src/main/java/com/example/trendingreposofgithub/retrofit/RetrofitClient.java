@@ -7,20 +7,27 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     public static final String BASE_URL = "https://github-trending-api.now.sh";
-    private static Retrofit retrofitInstance;
+    private static RetrofitClient retrofitInstance;
+    private GetTrendingRepos getTrendingRepos;
 
-    private RetrofitClient(){}
+    private RetrofitClient(){
+        Retrofit retrofit =  new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-    public static Retrofit getInstance(){
+        this.getTrendingRepos = retrofit.create(GetTrendingRepos.class);
+    }
+
+    public static RetrofitClient getInstance(){
         if (retrofitInstance == null){
-            retrofitInstance =  new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+            retrofitInstance = new RetrofitClient();
         }
 
         return retrofitInstance;
     }
 
-
+    public GetTrendingRepos getTrendingRepos(){
+        return this.getTrendingRepos;
+    }
 }
