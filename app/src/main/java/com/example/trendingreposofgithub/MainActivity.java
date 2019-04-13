@@ -46,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+        // In real world app I would use pagination, 
+        // but as here we don't have huge amount of data, I've decided not to 
+        // use it. 
 
     public void generateTrendingRepos( final List<Repos> repoList) {
-
         mRecyclerView = findViewById(R.id.recycler_view);
         mDataAdapter = new CustomAdapter(repoList);
         viewModel = ViewModelProviders.of(MainActivity.this).get(ReposViewModel.class);
